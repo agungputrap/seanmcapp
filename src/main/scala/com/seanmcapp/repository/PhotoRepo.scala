@@ -22,7 +22,7 @@ object PhotoRepo extends TableQuery(new PhotoInfo(_)) {
 
   val db = DBComponent.db
 
-  def getAll: Future[Set[String]] = {
+  def getAllId: Future[Set[String]] = {
     db.run {
       this.map(_.id).result //TODO: masukin cache
     }.map(_.toSet)

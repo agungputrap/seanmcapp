@@ -24,7 +24,7 @@ object InstagramService extends HttpRequestBuilder with JsonProtocol {
       val accountName = account._1
       val accountRegex = account._2
       val fetchResult = getPage(accountName, None)
-      val photoRepoFuture = PhotoRepo.getAll
+      val photoRepoFuture = PhotoRepo.getAllId
       val customerRepoFuture = CustomerRepo.getAllSubscribedCust
 
       for {

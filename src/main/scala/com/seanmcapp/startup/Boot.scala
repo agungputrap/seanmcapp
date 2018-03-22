@@ -15,7 +15,7 @@ object Boot extends App {
 
   lazy val route = new Route().routePath
 
-  val serverBinding = start(System.getenv("PORT").toInt)
+  val serverBinding = start(5000)
 
   scala.sys.addShutdownHook {
     stop(serverBinding)
